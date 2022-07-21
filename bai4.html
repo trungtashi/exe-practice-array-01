@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="value1">
+<br>
+<button onclick="inputvalue()">InputValue</button>
+<button onclick="rev()">Dao Nguoc</button>
+<br>
+<p id="result"></p>
+<script>
+  let array = new Array()
+  let i  = 0
+  function inputvalue() {
+    array[i] = document.getElementById('value1').value;
+    i++;
+    document.getElementById('value1').value = '';
+  }
+  function rev()
+  {
+    let first = 0;
+    let last = array.length - 1;
+    while (first < last) {
+      let b = array[first];
+      array[first] = array[last];
+      array[last] = b;
+      first++;
+      last--;
+    }
+    document.getElementById('result').innerHTML = array;
+  }
+</script>
+
+</body>
+</html>

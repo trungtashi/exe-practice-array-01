@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="value1">
+<br>
+<button onclick="inputvalue()">InputValue</button>
+<button onclick="display()">Display</button>
+<button onclick="findmax()">Tim Max</button>
+<br>
+<p id="show"></p>
+<script>
+    let array = new Array()
+    let i  = 0
+    function inputvalue() {
+        array[i] = document.getElementById('value1').value;
+        i++;
+        document.getElementById('value1').value= '';
+        if (i >=10 ) {
+            alert('day chi co 10 so');
+            return;
+        }
+    }
+    function display()
+    {
+        document.getElementById('show').innerHTML = array;
+    }
+    function findmax()
+    {
+        let stt = 1
+        let max = array[0]
+        while (stt < array.length)
+        {
+            if ( max < array[stt]) {
+                max = array[stt];
+            }
+            stt++;
+        }
+        document.getElementById('show').innerHTML = max + "  nam o vi tri " + array.indexOf(max);
+    }
+
+
+
+
+</script>
+</body>
+</html>

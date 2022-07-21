@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="value1">
+<br>
+<button onclick="inputvalue()">InputValue</button>
+<button onclick="findmax()">Tim Max</button>
+<br>
+<p id="result"></p>
+<script>
+    let array = new Array()
+    let i  = 0
+    function inputvalue() {
+        array[i] = document.getElementById('value1').value;
+        i++;
+        document.getElementById('value1').value = '';
+    }
+    function findmax()
+    {
+        let stt = 1;
+        let max = array[0];
+        let sum = Number(array[0]);
+        while (stt < array.length)
+        {
+            sum = sum + Number(array[stt]);
+
+            if ( max < array[stt]) {
+                max = array[stt];
+            }
+            stt++;
+        }
+    let ave = sum / (array.length)
+    document.getElementById('result').innerHTML = "gia tri lon nhat la  " + max + "<br>" + " gia tri trung binh cac phan tu la  "+ ave;
+    }
+
+</script>
+
+</body>
+</html>

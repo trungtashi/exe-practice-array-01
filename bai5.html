@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="value1">
+<br>
+<button onclick="inputvalue()">InputValue</button>
+<button onclick="dem()">DemSoAm</button>
+<p id="result"></p>
+<script>
+    let array = new Array()
+    let i  = 0
+    function inputvalue() {
+        array[i] = document.getElementById('value1').value;
+        i++;
+        document.getElementById('value1').value = '';
+    }
+    function dem()
+    {
+        let count = 0;
+        let a = 0
+        while ( a < array.length) {
+            let b = parseInt(array[a])
+            if (b < 0) {
+                count++
+            }
+            a++;
+        }
+        document.getElementById('result').innerHTML = "co " + count + " so am";
+    }
+</script>
+
+</body>
+</html>

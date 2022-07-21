@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Nhap mang A</h3>
+<br>
+<input type="text" id="inputvaluea">
+<button onclick="inputa()">Input A</button>
+<br>
+<h3>Nhap mang B</h3>
+<br>
+<input type="text" id="inputvalueab">
+<button onclick="inputb()">Input B</button>
+<br>
+<button onclick="connect()">Nối</button>
+<p id="result"></p>
+<script>
+var arr1 = new Array();
+var  arr2 = new Array();
+var i = 0;
+function  inputa()
+{
+    arr1[i] = Number(document.getElementById('inputvaluea').value);
+    i++;
+    document.getElementById('inputvaluea').value = '';
+    if (i >= 10) {
+        alert('day chi co 10 so');
+        return;
+    }
+}
+ i = 0;
+function inputb() {
+    arr2[i] = Number(document.getElementById('inputvalueab').value);
+    i++;
+    document.getElementById('inputvalueab').value = '';
+    if (i >= 10) {
+        alert('day chi co 10 so');
+        return;
+    }
+}
+function connect()
+{
+    let arr3 = new Array();
+    arr3 = arr1.concat(arr2);
+    document.getElementById('result').innerHTML = arr3;
+
+}
+
+</script>
+
+
+</body>
+</html>

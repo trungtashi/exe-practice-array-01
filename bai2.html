@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let length = +prompt("Nhập vào độ dài mảng")
+    let array = new Array(length)
+    let count = 0
+    for (let i = 0; i < array.length; i++) {
+        let value = +prompt("Nhập vào phần tử thứ " + (i + 1))
+        let check = true
+        for (let j = 0; j <= i; j++) {
+            if (value === array[j]) {
+                check = false
+                break
+            }
+        }
+        if (check) {
+            array[i] = value
+            count = 0
+        } else {
+            i--
+            count++
+        }
+        if (count === 3) {
+            alert("Nhập sai nhiều quá!")
+            break
+        }
+    }
+
+        let max = array[0]
+        let index = 0
+        for (let h = 1; h < array.length; h++) {
+            if (max < array[h]) {
+                max = array[h];
+                index = h;
+            }
+        }
+        document.write("Phần tử lớn nhất là: " + max + "; vị trí thứ: " + index);
+
+
+</script>
+
+</body>
+</html>

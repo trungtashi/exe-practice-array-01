@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="value1">
+<br>
+<button onclick="inputvalue()">InputValue</button>
+<button onclick="done()">Xong</button>
+<p id="result"></p>
+<script>
+    var array = new Array()
+    let i  = 0
+    function inputvalue() {
+        array[i] = Number(document.getElementById('value1').value);
+        i++;
+        document.getElementById('value1').value = '';
+        if (i >= 10) {
+            alert('day chi co 10 so');
+            return;
+        }
+    }
+    let b = 0;
+    function done() {
+        let a = Number(prompt(' nhap so V'));
+        let count = 0;
+        while (b < array.length) {
+            if (a == array[b]) {
+                let vitri  = array.indexOf(a);
+                array.splice(vitri,1);
+                document.getElementById('result').innerHTML = array ;
+                break;}
+            else count ++
+            b++
+            }
+        if ( count == array.length)
+            alert(' V is not in the array ')
+
+    }
+</script>
+
+</body>
+</html>

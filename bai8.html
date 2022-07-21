@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="value1">
+<br>
+<button onclick="inputvalue()">InputValue</button>
+<button onclick="show()">show</button>
+<button onclick="sort()">Sap Xep</button>
+<p id="result"></p>
+<script>
+    var array = new Array()
+    let i  = 0
+    function inputvalue() {
+        array[i] = Number(document.getElementById('value1').value);
+        i++;
+        document.getElementById('value1').value = '';
+        if (i >= 10) {
+            alert('day chi co 10 so');
+            return;
+        }
+    }
+    function sort()
+    {
+        array.sort(function (a, b){return b- a})
+        document.getElementById('result').innerHTML = array;
+
+    }
+    function show()
+    {
+        document.getElementById('result').innerHTML = array;
+    }
+
+
+</script>
+
+</body>
+</html>
